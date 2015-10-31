@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -165,10 +165,10 @@ public class Solution {
             return 0;
         }  
 
-        HashMap<Double, Integer> map=new HashMap<Double, Integer>();
+        HashMap&lt;Double, Integer&gt; map=new HashMap&lt;Double, Integer&gt;();
         int max = 1;
 
-        for(int i = 0 ; i < points.length; i++) {
+        for(int i = 0 ; i &lt; points.length; i++) {
             // shared point changed, map should be cleared and server the new point
             map.clear();
 
@@ -177,7 +177,7 @@ public class Solution {
             map.put((double)Integer.MIN_VALUE, 1);
 
             int dup = 0;
-            for(int j = i + 1; j < points.length; j++) {
+            for(int j = i + 1; j &lt; points.length; j++) {
                 if (points[j].x == points[i].x && points[j].y == points[i].y) {
                     dup++;
                     continue;
@@ -202,7 +202,7 @@ public class Solution {
 
             for (int temp: map.values()) {
                 // duplicate may exist
-                if (temp + dup > max) {
+                if (temp + dup &gt; max) {
                     max = temp + dup;
                 }
             }
@@ -273,13 +273,13 @@ class Line {
 public class Solution {
     
     public int maxPoints(Point[] points) {
-        if (points.length < 2) {
+        if (points.length &lt; 2) {
             return points.length;
         }
         
-        HashMap<String, Integer> hash = new HashMap<String, Integer>();
-        for (int i = 0; i < points.length; i++) {
-            for (int j = i + 1; j < points.length; j++) {
+        HashMap&lt;String, Integer&gt; hash = new HashMap&lt;String, Integer&gt;();
+        for (int i = 0; i &lt; points.length; i++) {
+            for (int j = i + 1; j &lt; points.length; j++) {
                 Line line = new Line(points[i].x, points[i].y,
                                      points[j].x, points[j].y);
                 String key = line.toString();
@@ -294,7 +294,7 @@ public class Solution {
         int max = 0;
         String maxKey = "";
         for (String key: hash.keySet()) {
-            if (hash.get(key) > max) {
+            if (hash.get(key) &gt; max) {
                 max = hash.get(key);
                 maxKey = key;
                 
@@ -306,8 +306,8 @@ public class Solution {
         double c = Double.parseDouble(params[2]);
         
         int count = 0;
-        for (int i = 0; i < points.length; i++) {
-            if (Math.abs(a * points[i].x + b * points[i].y - c) < 1e-6) {
+        for (int i = 0; i &lt; points.length; i++) {
+            if (Math.abs(a * points[i].x + b * points[i].y - c) &lt; 1e-6) {
                 count++;
             }
         }

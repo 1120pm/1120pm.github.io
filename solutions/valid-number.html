@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -165,15 +165,15 @@ public class Solution {
     public boolean isNumber(String s) {
         int len = s.length();
         int i = 0, e = len - 1;
-        while (i <= e && Character.isWhitespace(s.charAt(i))) i++;
-        if (i > len - 1) return false;
-        while (e >= i && Character.isWhitespace(s.charAt(e))) e--;
+        while (i &lt;= e && Character.isWhitespace(s.charAt(i))) i++;
+        if (i &gt; len - 1) return false;
+        while (e &gt;= i && Character.isWhitespace(s.charAt(e))) e--;
         // skip leading +/-
         if (s.charAt(i) == '+' || s.charAt(i) == '-') i++;
         boolean num = false; // is a digit
         boolean dot = false; // is a '.'
         boolean exp = false; // is a 'e'
-        while (i <= e) {
+        while (i &lt;= e) {
             char c = s.charAt(i);
             if (Character.isDigit(c)) {
                 num = true;

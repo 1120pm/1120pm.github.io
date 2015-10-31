@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -160,31 +160,31 @@
  */
 
 public class Solution {
-    public List<List<String>> findLadders(String start, String end,
-            Set<String> dict) {
-        List<List<String>> ladders = new ArrayList<List<String>>();
-        Map<String, List<String>> map = new HashMap<String, List<String>>();
-        Map<String, Integer> distance = new HashMap<String, Integer>();
+    public List&lt;List&lt;String&gt;&gt; findLadders(String start, String end,
+            Set&lt;String&gt; dict) {
+        List&lt;List&lt;String&gt;&gt; ladders = new ArrayList&lt;List&lt;String&gt;&gt;();
+        Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;String, List&lt;String&gt;&gt;();
+        Map&lt;String, Integer&gt; distance = new HashMap&lt;String, Integer&gt;();
 
         dict.add(start);
         dict.add(end);
  
         bfs(map, distance, start, end, dict);
         
-        List<String> path = new ArrayList<String>();
+        List&lt;String&gt; path = new ArrayList&lt;String&gt;();
         
         dfs(ladders, path, end, start, distance, map);
 
         return ladders;
     }
 
-    void dfs(List<List<String>> ladders, List<String> path, String crt,
-            String start, Map<String, Integer> distance,
-            Map<String, List<String>> map) {
+    void dfs(List&lt;List&lt;String&gt;&gt; ladders, List&lt;String&gt; path, String crt,
+            String start, Map&lt;String, Integer&gt; distance,
+            Map&lt;String, List&lt;String&gt;&gt; map) {
         path.add(crt);
         if (crt.equals(start)) {
             Collections.reverse(path);
-            ladders.add(new ArrayList<String>(path));
+            ladders.add(new ArrayList&lt;String&gt;(path));
             Collections.reverse(path);
         } else {
             for (String next : map.get(crt)) {
@@ -196,19 +196,19 @@ public class Solution {
         path.remove(path.size() - 1);
     }
 
-    void bfs(Map<String, List<String>> map, Map<String, Integer> distance,
-            String start, String end, Set<String> dict) {
-        Queue<String> q = new LinkedList<String>();
+    void bfs(Map&lt;String, List&lt;String&gt;&gt; map, Map&lt;String, Integer&gt; distance,
+            String start, String end, Set&lt;String&gt; dict) {
+        Queue&lt;String&gt; q = new LinkedList&lt;String&gt;();
         q.offer(start);
         distance.put(start, 0);
         for (String s : dict) {
-            map.put(s, new ArrayList<String>());
+            map.put(s, new ArrayList&lt;String&gt;());
         }
         
         while (!q.isEmpty()) {
             String crt = q.poll();
 
-            List<String> nextList = expand(crt, dict);
+            List&lt;String&gt; nextList = expand(crt, dict);
             for (String next : nextList) {
                 map.get(next).add(crt);
                 if (!distance.containsKey(next)) {
@@ -219,11 +219,11 @@ public class Solution {
         }
     }
 
-    List<String> expand(String crt, Set<String> dict) {
-        List<String> expansion = new ArrayList<String>();
+    List&lt;String&gt; expand(String crt, Set&lt;String&gt; dict) {
+        List&lt;String&gt; expansion = new ArrayList&lt;String&gt;();
 
-        for (int i = 0; i < crt.length(); i++) {
-            for (char ch = 'a'; ch <= 'z'; ch++) {
+        for (int i = 0; i &lt; crt.length(); i++) {
+            for (char ch = 'a'; ch &lt;= 'z'; ch++) {
                 if (ch != crt.charAt(i)) {
                     String expanded = crt.substring(0, i) + ch
                             + crt.substring(i + 1);

@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -171,7 +171,7 @@ public boolean isMatch(String s, String p) {
     int plenNoStar = 0;
     for (char c : p.toCharArray())
         if (c != '*') plenNoStar++;
-    if (plenNoStar > s.length()) return false;
+    if (plenNoStar &gt; s.length()) return false;
 
     s = " " + s;
     p = " " + p;
@@ -179,15 +179,15 @@ public boolean isMatch(String s, String p) {
     int plen = p.length();
 
     boolean[] dp = new boolean[slen];
-    TreeSet<Integer> firstTrueSet = new TreeSet<Integer>();
+    TreeSet&lt;Integer&gt; firstTrueSet = new TreeSet&lt;Integer&gt;();
     firstTrueSet.add(0);
     dp[0] = true;
 
     boolean allStar = true;
-    for (int pi = 1; pi < plen; pi++) {
+    for (int pi = 1; pi &lt; plen; pi++) {
         if (p.charAt(pi) != '*')
             allStar = false;
-        for (int si = slen - 1; si >= 0; si--) {
+        for (int si = slen - 1; si &gt;= 0; si--) {
             if (si == 0) {
                 dp[si] = allStar ? true : false;
             } else if (p.charAt(pi) != '*') {
@@ -195,7 +195,7 @@ public boolean isMatch(String s, String p) {
                 else dp[si] = false;
             } else {
                 int firstTruePos = firstTrueSet.isEmpty() ? Integer.MAX_VALUE : firstTrueSet.first();
-                if (si >= firstTruePos) dp[si] = true;
+                if (si &gt;= firstTruePos) dp[si] = true;
                 else dp[si] = false;
             }
             if (dp[si]) firstTrueSet.add(si);

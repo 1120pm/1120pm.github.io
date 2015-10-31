@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -170,9 +170,9 @@ public class Solution {
         int i, j, product, carry;
 
         int[] num3 = new int[len3];
-        for (i = len1 - 1; i >= 0; i--) {
+        for (i = len1 - 1; i &gt;= 0; i--) {
             carry = 0;
-            for (j = len2 - 1; j >= 0; j--) {
+            for (j = len2 - 1; j &gt;= 0; j--) {
                 product = carry + num3[i + j + 1] +
                     Character.getNumericValue(num1.charAt(i)) *
                     Character.getNumericValue(num2.charAt(j));
@@ -185,11 +185,11 @@ public class Solution {
         StringBuilder sb = new StringBuilder();
         i = 0;
 
-        while (i < len3 - 1 && num3[i] == 0) {
+        while (i &lt; len3 - 1 && num3[i] == 0) {
             i++;
         }
 
-        while (i < len3) {
+        while (i &lt; len3) {
             sb.append(num3[i++]);
         }
 

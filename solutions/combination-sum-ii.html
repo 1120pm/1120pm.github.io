@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -161,33 +161,33 @@
 
 public class Solution {
 
-    private ArrayList<ArrayList<Integer>> results;
+    private ArrayList&lt;ArrayList&lt;Integer&gt;&gt; results;
 
-    public ArrayList<ArrayList<Integer>> combinationSum2(int[] candidates,
+    public ArrayList&lt;ArrayList&lt;Integer&gt;&gt; combinationSum2(int[] candidates,
             int target) {
-        if (candidates.length < 1) {
+        if (candidates.length &lt; 1) {
             return results;
         }
 
-        ArrayList<Integer> path = new ArrayList<Integer>();
+        ArrayList&lt;Integer&gt; path = new ArrayList&lt;Integer&gt;();
         java.util.Arrays.sort(candidates);
-        results = new ArrayList<ArrayList<Integer>> ();
+        results = new ArrayList&lt;ArrayList&lt;Integer&gt;&gt; ();
         combinationSumHelper(path, candidates, target, 0);
 
         return results;
     }
 
-    private void combinationSumHelper(ArrayList<Integer> path, int[] candidates, int sum, int pos) {
+    private void combinationSumHelper(ArrayList&lt;Integer&gt; path, int[] candidates, int sum, int pos) {
         if (sum == 0) {
-            results.add(new ArrayList<Integer>(path));
+            results.add(new ArrayList&lt;Integer&gt;(path));
         }
 
-        if (pos >= candidates.length || sum < 0) {
+        if (pos &gt;= candidates.length || sum &lt; 0) {
             return;
         }
 
         int prev = -1;
-        for (int i = pos; i < candidates.length; i++) {
+        for (int i = pos; i &lt; candidates.length; i++) {
             if (candidates[i] != prev) {
                 path.add(candidates[i]);
                 combinationSumHelper(path, candidates, sum - candidates[i], i + 1);

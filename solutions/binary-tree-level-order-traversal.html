@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -161,20 +161,20 @@
 
 // version 1: BFS
 public class Solution {
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+    public ArrayList&lt;ArrayList&lt;Integer&gt;&gt; levelOrder(TreeNode root) {
         ArrayList result = new ArrayList();
 
         if (root == null) {
             return result;
         }
 
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-            ArrayList<Integer> level = new ArrayList<Integer>();
+            ArrayList&lt;Integer&gt; level = new ArrayList&lt;Integer&gt;();
             int size = queue.size();
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i &lt; size; i++) {
                 TreeNode head = queue.poll();
                 level.add(head.val);
                 if (head.left != null) {
@@ -211,8 +211,8 @@ public class Solution {
      * @param root: The root of binary tree.
      * @return: Level order a list of lists of integer
      */
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-        ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
+    public ArrayList&lt;ArrayList&lt;Integer&gt;&gt; levelOrder(TreeNode root) {
+        ArrayList&lt;ArrayList&lt;Integer&gt;&gt; results = new ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();
         
         if (root == null) {
             return results;
@@ -220,7 +220,7 @@ public class Solution {
         
         int maxLevel = 0;
         while (true) {
-            ArrayList<Integer> level = new ArrayList<Integer>();
+            ArrayList&lt;Integer&gt; level = new ArrayList&lt;Integer&gt;();
             dfs(root, level, 0, maxLevel);
             if (level.size() == 0) {
                 break;
@@ -234,10 +234,10 @@ public class Solution {
     }
     
     private void dfs(TreeNode root,
-                     ArrayList<Integer> level,
+                     ArrayList&lt;Integer&gt; level,
                      int curtLevel,
                      int maxLevel) {
-        if (root == null || curtLevel > maxLevel) {
+        if (root == null || curtLevel &gt; maxLevel) {
             return;
         }
         

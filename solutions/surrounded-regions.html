@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -175,18 +175,18 @@ public class Solution {
         int row = board.length;
         int col = board[0].length;
         
-        for (int i = 0; i < row; i++) {
+        for (int i = 0; i &lt; row; i++) {
             bfs(board, i, 0);
             bfs(board, i, col - 1);
         }
         
-        for (int j = 1; j < col - 1; j++) {
+        for (int j = 1; j &lt; col - 1; j++) {
             bfs(board, 0, j);
             bfs(board, row - 1, j);
         }
         
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
+        for (int i = 0; i &lt; row; i++) {
+            for (int j = 0; j &lt; col; j++) {
                 switch(board[i][j]) {
                     case 'O': 
                         board[i][j] = 'X';
@@ -203,7 +203,7 @@ public class Solution {
             return;
         }
         
-        Queue<Node> queue = new LinkedList<Node>();
+        Queue&lt;Node&gt; queue = new LinkedList&lt;Node&gt;();
         queue.offer(new Node(i, j));
         
         while (!queue.isEmpty()) {
@@ -216,15 +216,15 @@ public class Solution {
         }
     }
     
-    private List<Node> expand(char[][] board, Node node) {
-        List<Node> expansion = new ArrayList<Node>();
+    private List&lt;Node&gt; expand(char[][] board, Node node) {
+        List&lt;Node&gt; expansion = new ArrayList&lt;Node&gt;();
         
-        for (int i = 0; i < directionX.length; i++) {
+        for (int i = 0; i &lt; directionX.length; i++) {
             int x = node.x + directionX[i];
             int y = node.y + directionY[i];
             
             // check validity
-            if (x >= 0 && x < board.length && y >= 0 && y < board[0].length && board[x][y] == 'O') {
+            if (x &gt;= 0 && x &lt; board.length && y &gt;= 0 && y &lt; board[0].length && board[x][y] == 'O') {
                 board[x][y] = TRAVELED;
                 expansion.add(new Node(x, y));
             }
@@ -248,7 +248,7 @@ public class Solution {
 version 2:
 
 public class Solution {
-    private static Queue<Integer> queue = null;
+    private static Queue&lt;Integer&gt; queue = null;
     private static char[][] board;
     private static int rows = 0;
     private static int cols = 0;
@@ -256,17 +256,17 @@ public class Solution {
     public void solve(char[][] board) {
         // Note: The Solution object is instantiated only once and is reused by each test case.
         if (board.length == 0 || board[0].length == 0) return;
-        queue = new LinkedList<Integer>();
+        queue = new LinkedList&lt;Integer&gt;();
         board = board;
         rows = board.length;
         cols = board[0].length;
 
-        for (int i = 0; i < rows; i++) { // **important**
+        for (int i = 0; i &lt; rows; i++) { // **important**
             enqueue(i, 0);
             enqueue(i, cols - 1);
         }
 
-        for (int j = 1; j < cols - 1; j++) { // **important**
+        for (int j = 1; j &lt; cols - 1; j++) { // **important**
             enqueue(0, j);
             enqueue(rows - 1, j);
         }
@@ -286,8 +286,8 @@ public class Solution {
             enqueue(x, y + 1);
         }
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+        for (int i = 0; i &lt; rows; i++) {
+            for (int j = 0; j &lt; cols; j++) {
                 if (board[i][j] == 'D') board[i][j] = 'O';
                 else if (board[i][j] == 'O') board[i][j] = 'X';
             }
@@ -300,7 +300,7 @@ public class Solution {
     }
 
     public static void enqueue(int x, int y) {
-        if (x >= 0 && x < rows && y >= 0 && y < cols && board[x][y] == 'O'){  
+        if (x &gt;= 0 && x &lt; rows && y &gt;= 0 && y &lt; cols && board[x][y] == 'O'){  
             queue.offer(x * cols + y);
         }
     }

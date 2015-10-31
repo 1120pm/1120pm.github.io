@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -165,10 +165,10 @@ public class Solution {
         int[] steps = new int[A.length];
         
         steps[0] = 0;
-        for (int i = 1; i < A.length; i++) {
+        for (int i = 1; i &lt; A.length; i++) {
             steps[i] = Integer.MAX_VALUE;
-            for (int j = 0; j < i; j++) {
-                if (steps[j] != Integer.MAX_VALUE && j + A[j] >= i) {
+            for (int j = 0; j &lt; i; j++) {
+                if (steps[j] != Integer.MAX_VALUE && j + A[j] &gt;= i) {
                     steps[i] = steps[j] + 1;
                     break;
                 }
@@ -187,11 +187,11 @@ public class Solution {
             return -1;
         }
         int start = 0, end = 0, jumps = 0;
-        while (end < A.length - 1) {
+        while (end &lt; A.length - 1) {
             jumps++;
             int farthest = end;
-            for (int i = start; i <= end; i++) {
-                if (A[i] + i > farthest) {
+            for (int i = start; i &lt;= end; i++) {
+                if (A[i] + i &gt; farthest) {
                     farthest = A[i] + i;
                 }
             }

@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -161,12 +161,12 @@
 
 // version 1:
 public class MinStack {
-    private Stack<Integer> stack;
-    private Stack<Integer> minStack;
+    private Stack&lt;Integer&gt; stack;
+    private Stack&lt;Integer&gt; minStack;
     
     public MinStack() {
-        stack = new Stack<Integer>();
-        minStack = new Stack<Integer>();
+        stack = new Stack&lt;Integer&gt;();
+        minStack = new Stack&lt;Integer&gt;();
     }
 
     public void push(int number) {
@@ -190,12 +190,12 @@ public class MinStack {
 
 // version 2, save more space. but space complexity doesn't change.
 public class MinStack {
-    private Stack<Integer> stack;
-    private Stack<Integer> minStack;
+    private Stack&lt;Integer&gt; stack;
+    private Stack&lt;Integer&gt; minStack;
 
     public MinStack() {
-        stack = new Stack<Integer>();
-        minStack = new Stack<Integer>();
+        stack = new Stack&lt;Integer&gt;();
+        minStack = new Stack&lt;Integer&gt;();
     }
 
     public void push(int number) {
@@ -203,7 +203,7 @@ public class MinStack {
         if (minStack.empty() == true)
             minStack.push(number);
         else
-        if (Integer.parseInt(minStack.peek().toString()) >= number)
+        if (Integer.parseInt(minStack.peek().toString()) &gt;= number)
             minStack.push(number);
     }
 

@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -160,14 +160,14 @@
  */
 
 public class Solution {
-    public ArrayList<String> letterCombinations(String digits) {
-        ArrayList<String> result = new ArrayList<String>();
+    public ArrayList&lt;String&gt; letterCombinations(String digits) {
+        ArrayList&lt;String&gt; result = new ArrayList&lt;String&gt;();
 
         if (digits == null || digits.equals("")) {
             return result;
         }
 
-        Map<Character, char[]> map = new HashMap<Character, char[]>();
+        Map&lt;Character, char[]&gt; map = new HashMap&lt;Character, char[]&gt;();
         map.put('0', new char[] {});
         map.put('1', new char[] {});
         map.put('2', new char[] { 'a', 'b', 'c' });
@@ -185,8 +185,8 @@ public class Solution {
         return result;
     }
 
-    private void helper(Map<Character, char[]> map, String digits, 
-        StringBuilder sb, ArrayList<String> result) {
+    private void helper(Map&lt;Character, char[]&gt; map, String digits, 
+        StringBuilder sb, ArrayList&lt;String&gt; result) {
         if (sb.length() == digits.length()) {
             result.add(sb.toString());
             return;

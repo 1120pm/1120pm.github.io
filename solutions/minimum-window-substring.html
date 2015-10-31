@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -171,8 +171,8 @@ public class Solution {
     }
     boolean valid(int []sourcehash, int []targethash) {
         
-        for(int i = 0; i < 256; i++) {
-            if(targethash[i] > sourcehash[i])    
+        for(int i = 0; i &lt; 256; i++) {
+            if(targethash[i] &gt; sourcehash[i])    
                 return false;
         }
         return true;
@@ -187,17 +187,17 @@ public class Solution {
         
         initTargetHash(targethash, Target);
         int j = 0, i = 0;
-        for(i = 0; i < Source.length(); i++) {
+        for(i = 0; i &lt; Source.length(); i++) {
             
-            while( !valid(sourcehash, targethash) && j < Source.length()  ) {
+            while( !valid(sourcehash, targethash) && j &lt; Source.length()  ) {
                 sourcehash[Source.charAt(j)]++;
-                if(j < Source.length() )
+                if(j &lt; Source.length() )
                     j++;
                 else 
                     break;
             }
             if(valid(sourcehash, targethash) ){
-                if(ans > j - i ) {
+                if(ans &gt; j - i ) {
                     ans = Math.min(ans, j - i );
                     minStr = Source.substring(i, j );
                 }
@@ -226,18 +226,18 @@ public class Solution {
         int targetnum = initTargetHash(targethash, Target);
         int sourcenum = 0;
         int j = 0, i = 0;
-        for(i = 0; i < Source.length(); i++) {
-            if(targethash[Source.charAt(i)] > 0)
+        for(i = 0; i &lt; Source.length(); i++) {
+            if(targethash[Source.charAt(i)] &gt; 0)
                 sourcenum++;
             
             targethash[Source.charAt(i)]--;
-            while(sourcenum>=targetnum) {
-                if(ans > i - j + 1) {
+            while(sourcenum&gt;=targetnum) {
+                if(ans &gt; i - j + 1) {
                     ans = Math.min(ans, i - j + 1);
                     minStr = Source.substring(j, i + 1);
                 }
                 targethash[Source.charAt(j)]++;
-                if(targethash[Source.charAt(j)] > 0)
+                if(targethash[Source.charAt(j)] &gt; 0)
                     sourcenum--;
                 j ++;
             }

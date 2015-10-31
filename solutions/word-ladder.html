@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -160,13 +160,13 @@
  */
 
 public class Solution {
-    public int ladderLength(String start, String end, Set<String> dict) {
+    public int ladderLength(String start, String end, Set&lt;String&gt; dict) {
         if (dict == null || dict.size() == 0) {
             return 0;
         }
 
-        HashSet<String> hash = new HashSet<String>();
-        Queue<String> queue = new LinkedList<String>();
+        HashSet&lt;String&gt; hash = new HashSet&lt;String&gt;();
+        Queue&lt;String&gt; queue = new LinkedList&lt;String&gt;();
         queue.offer(start);
         hash.add(start);
         
@@ -174,7 +174,7 @@ public class Solution {
         while(!queue.isEmpty()) {
             length++;
             int size = queue.size();
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i &lt; size; i++) {
                 String word = queue.poll();
                 for (String nextWord: getNextWords(word, dict)) {
                     if (hash.contains(nextWord)) {
@@ -203,10 +203,10 @@ public class Solution {
     // get connections with given word.
     // for example, given word = 'hot', dict = {'hot', 'hit', 'hog'}
     // it will return ['hit', 'hog']
-    private ArrayList<String> getNextWords(String word, Set<String> dict) {
-        ArrayList<String> nextWords = new ArrayList<String>();
-        for (char c = 'a'; c <= 'z'; c++) {
-            for (int i = 0; i < word.length(); i++) {
+    private ArrayList&lt;String&gt; getNextWords(String word, Set&lt;String&gt; dict) {
+        ArrayList&lt;String&gt; nextWords = new ArrayList&lt;String&gt;();
+        for (char c = 'a'; c &lt;= 'z'; c++) {
+            for (int i = 0; i &lt; word.length(); i++) {
                 if (c == word.charAt(i)) {
                     continue;
                 }

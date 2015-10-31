@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -176,14 +176,14 @@ public class Solution {
      * @param lists: a list of ListNode
      * @return: The head of one sorted list.
      */
-    public ListNode mergeKLists(List<ListNode> lists) {
+    public ListNode mergeKLists(List&lt;ListNode&gt; lists) {
         if (lists.size() == 0) {
             return null;
         }
         return mergeHelper(lists, 0, lists.size() - 1);
     }
     
-    private ListNode mergeHelper(List<ListNode> lists, int start, int end) {
+    private ListNode mergeHelper(List&lt;ListNode&gt; lists, int start, int end) {
         if (start == end) {
             return lists.get(start);
         }
@@ -198,7 +198,7 @@ public class Solution {
         ListNode dummy = new ListNode(0);
         ListNode tail = dummy;
         while (list1 != null && list2 != null) {
-            if (list1.val < list2.val) {
+            if (list1.val &lt; list2.val) {
                 tail.next = list1;
                 tail = list1;
                 list1 = list1.next;
@@ -220,7 +220,7 @@ public class Solution {
 
 // version 2: Heap
 public class Solution {
-    private Comparator<ListNode> ListNodeComparator = new Comparator<ListNode>() {
+    private Comparator&lt;ListNode&gt; ListNodeComparator = new Comparator&lt;ListNode&gt;() {
         public int compare(ListNode left, ListNode right) {
             if (left == null) {
                 return 1;
@@ -231,13 +231,13 @@ public class Solution {
         }
     };
     
-    public ListNode mergeKLists(ArrayList<ListNode> lists) {
+    public ListNode mergeKLists(ArrayList&lt;ListNode&gt; lists) {
         if (lists == null || lists.size() == 0) {
             return null;
         }
         
-        Queue<ListNode> heap = new PriorityQueue<ListNode>(lists.size(), ListNodeComparator);
-        for (int i = 0; i < lists.size(); i++) {
+        Queue&lt;ListNode&gt; heap = new PriorityQueue&lt;ListNode&gt;(lists.size(), ListNodeComparator);
+        for (int i = 0; i &lt; lists.size(); i++) {
             if (lists.get(i) != null) {
                 heap.add(lists.get(i));
             }
@@ -274,14 +274,14 @@ public class Solution {
      * @param lists: a list of ListNode
      * @return: The head of one sorted list.
      */
-    public ListNode mergeKLists(List<ListNode> lists) {  
+    public ListNode mergeKLists(List&lt;ListNode&gt; lists) {  
         if (lists == null || lists.size() == 0) {
             return null;
         }
         
-        while (lists.size() > 1) {
-            List<ListNode> new_lists = new ArrayList<ListNode>();
-            for (int i = 0; i + 1 < lists.size(); i += 2) {
+        while (lists.size() &gt; 1) {
+            List&lt;ListNode&gt; new_lists = new ArrayList&lt;ListNode&gt;();
+            for (int i = 0; i + 1 &lt; lists.size(); i += 2) {
                 ListNode merged_list = merge(lists.get(i), lists.get(i+1));
                 new_lists.add(merged_list);
             }
@@ -298,7 +298,7 @@ public class Solution {
         ListNode dummy = new ListNode(0);
         ListNode tail = dummy;
         while (a != null && b != null) {
-            if (a.val < b.val) {
+            if (a.val &lt; b.val) {
                 tail.next = a;
                 a = a.next;
             } else {

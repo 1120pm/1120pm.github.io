@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -166,7 +166,7 @@ public class Solution {
             return null;
         }
 
-        HashMap<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
+        HashMap&lt;RandomListNode, RandomListNode&gt; map = new HashMap&lt;RandomListNode, RandomListNode&gt;();
         RandomListNode dummy = new RandomListNode(0);
         RandomListNode pre = dummy, newNode;
         while (head != null) {
@@ -195,7 +195,7 @@ public class Solution {
     }
 }
 
-/*第一遍扫的时候巧妙运用next指针， 开始数组是1->2->3->4  。 然后扫描过程中 先建立copy节点 1->1`->2->2`->3->3`->4->4`, 然后第二遍copy的时候去建立边的copy， 拆分节点, 一边扫描一边拆成两个链表，这里用到两个dummy node。第一个链表变回  1->2->3 , 然后第二变成 1`->2`->3`  */
+/*第一遍扫的时候巧妙运用next指针， 开始数组是1-&gt;2-&gt;3-&gt;4  。 然后扫描过程中 先建立copy节点 1-&gt;1`-&gt;2-&gt;2`-&gt;3-&gt;3`-&gt;4-&gt;4`, 然后第二遍copy的时候去建立边的copy， 拆分节点, 一边扫描一边拆成两个链表，这里用到两个dummy node。第一个链表变回  1-&gt;2-&gt;3 , 然后第二变成 1`-&gt;2`-&gt;3`  */
 //No HashMap version
 public class Solution {
     private void copyNext(RandomListNode head) {

@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -162,17 +162,17 @@
 public class Solution {
     public String convert(String s, int nRows) {
         int length = s.length();
-        if (length <= nRows || nRows == 1) return s;
+        if (length &lt;= nRows || nRows == 1) return s;
         char[] chars = new char[length];
         int step = 2 * (nRows - 1);
         int count = 0;
-     for (int i = 0; i < nRows; i++){
+     for (int i = 0; i &lt; nRows; i++){
       int interval = step - 2 * i;
-      for (int j = i; j < length; j += step){
+      for (int j = i; j &lt; length; j += step){
           chars[count] = s.charAt(j);
        count++;
-       if (interval < step && interval > 0 
-    && j + interval < length && count <  length){
+       if (interval &lt; step && interval &gt; 0 
+    && j + interval &lt; length && count &lt;  length){
         chars[count] = s.charAt(j + interval);
         count++;
        }

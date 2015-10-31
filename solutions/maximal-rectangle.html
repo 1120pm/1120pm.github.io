@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -161,15 +161,15 @@
 
 public class Solution {
     public int maximalRectangle(char[][] matrix) {
-        if (matrix.length < 1) return 0;
+        if (matrix.length &lt; 1) return 0;
         int n = matrix.length;
         if (n == 0) return 0;
         int m = matrix[0].length;
         if (m == 0) return 0;
         int[][] height = new int[n][m];
 
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; ++j) {
+        for (int i = 0; i &lt; n; ++i) {
+            for (int j = 0; j &lt; m; ++j) {
                 if (i == 0)
                     height[i][j] = ((matrix[i][j] == '1') ? 1 : 0);
                 else
@@ -178,10 +178,10 @@ public class Solution {
         }
 
         int answer = 0;
-        for (int i = 0; i < n; ++i) {
-            Stack<Integer> S = new Stack<Integer>();  
-            for (int j = 0; j < m; j++) {
-                while (!S.empty() && height[i][j] < height[i][S.peek()]) {
+        for (int i = 0; i &lt; n; ++i) {
+            Stack&lt;Integer&gt; S = new Stack&lt;Integer&gt;();  
+            for (int j = 0; j &lt; m; j++) {
+                while (!S.empty() && height[i][j] &lt; height[i][S.peek()]) {
                     int pos = S.peek();
                     S.pop();
                     answer = Math.max(answer, height[i][pos]*(S.empty()? j : j-S.peek()-1));

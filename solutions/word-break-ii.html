@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -161,9 +161,9 @@
 
 // version 1:
 public class Solution {
-    private void search(int index, String s, List<Integer> path,
+    private void search(int index, String s, List&lt;Integer&gt; path,
                    boolean[][] isWord, boolean[] possible,
-                   List<String> result) {
+                   List&lt;String&gt; result) {
         if (!possible[index]) {
             return;
         }
@@ -171,7 +171,7 @@ public class Solution {
         if (index == s.length()) {
             StringBuilder sb = new StringBuilder();
             int lastIndex = 0;
-            for (int i = 0; i < path.size(); i++) {
+            for (int i = 0; i &lt; path.size(); i++) {
                 sb.append(s.substring(lastIndex, path.get(i)));
                 if (i != path.size() - 1) sb.append(" ");
                 lastIndex = path.get(i);
@@ -180,7 +180,7 @@ public class Solution {
             return;
         }
         
-        for (int i = index; i < s.length(); i++) {
+        for (int i = index; i &lt; s.length(); i++) {
             if (!isWord[index][i]) {
                 continue;
             }
@@ -190,15 +190,15 @@ public class Solution {
         }
     }
     
-    public List<String> wordBreak(String s, Set<String> wordDict) {
-        ArrayList<String> result = new ArrayList<String>();
+    public List&lt;String&gt; wordBreak(String s, Set&lt;String&gt; wordDict) {
+        ArrayList&lt;String&gt; result = new ArrayList&lt;String&gt;();
         if (s.length() == 0) {
             return result;
         }
         
         boolean[][] isWord = new boolean[s.length()][s.length()];
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = i; j < s.length(); j++) {
+        for (int i = 0; i &lt; s.length(); i++) {
+            for (int j = i; j &lt; s.length(); j++) {
                 String word = s.substring(i, j + 1);
                 isWord[i][j] = wordDict.contains(word);
             }
@@ -206,8 +206,8 @@ public class Solution {
         
         boolean[] possible = new boolean[s.length() + 1];
         possible[s.length()] = true;
-        for (int i = s.length() - 1; i >= 0; i--) {
-            for (int j = i; j < s.length(); j++) {
+        for (int i = s.length() - 1; i &gt;= 0; i--) {
+            for (int j = i; j &lt; s.length(); j++) {
                 if (isWord[i][j] && possible[j + 1]) {
                     possible[i] = true;
                     break;
@@ -215,7 +215,7 @@ public class Solution {
             }
         }
         
-        List<Integer> path = new ArrayList<Integer>();
+        List&lt;Integer&gt; path = new ArrayList&lt;Integer&gt;();
         search(0, s, path, isWord, possible, result);
         return result;
     }
@@ -224,25 +224,25 @@ public class Solution {
 // version 2:
 
 public class Solution {
-    public ArrayList<String> wordBreak(String s, Set<String> dict) {
+    public ArrayList&lt;String&gt; wordBreak(String s, Set&lt;String&gt; dict) {
         // Note: The Solution object is instantiated only once and is reused by each test case.
-        Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+        Map&lt;String, ArrayList&lt;String&gt;&gt; map = new HashMap&lt;String, ArrayList&lt;String&gt;&gt;();
         return wordBreakHelper(s,dict,map);
     }
 
-    public ArrayList<String> wordBreakHelper(String s, Set<String> dict, Map<String, ArrayList<String>> memo){
+    public ArrayList&lt;String&gt; wordBreakHelper(String s, Set&lt;String&gt; dict, Map&lt;String, ArrayList&lt;String&gt;&gt; memo){
         if(memo.containsKey(s)) return memo.get(s);
-        ArrayList<String> result = new ArrayList<String>();
+        ArrayList&lt;String&gt; result = new ArrayList&lt;String&gt;();
         int n = s.length();
-        if(n <= 0) return result;
-        for(int len = 1; len <= n; ++len){
+        if(n &lt;= 0) return result;
+        for(int len = 1; len &lt;= n; ++len){
             String subfix = s.substring(0,len);
             if(dict.contains(subfix)){
                 if(len == n){
                     result.add(subfix);
                 }else{
                     String prefix = s.substring(len);
-                    ArrayList<String> tmp = wordBreakHelper(prefix, dict, memo);
+                    ArrayList&lt;String&gt; tmp = wordBreakHelper(prefix, dict, memo);
                     for(String item:tmp){
                         item = subfix + " " + item;
                         result.add(item);

@@ -152,7 +152,7 @@
     <div class="container">
         <section role="answer">
             <pre class="prettyprint lang-java">
-              /**
+/**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
  * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
@@ -174,7 +174,7 @@ public class Solution {
         ListNode dummy = new ListNode(0);
         ListNode tail = dummy;
         while (head1 != null && head2 != null) {
-            if (head1.val < head2.val) {
+            if (head1.val &lt; head2.val) {
                 tail.next = head1;
                 head1 = head1.next;
             } else {
@@ -220,10 +220,10 @@ public class Solution {
         ListNode rightDummy = new ListNode(0), rightTail = rightDummy;
         ListNode middleDummy = new ListNode(0), middleTail = middleDummy;
         while (head != null) {
-            if (head.val < mid.val) {
+            if (head.val &lt; mid.val) {
                 leftTail.next = head;
                 leftTail = head;
-            } else if (head.val > mid.val) {
+            } else if (head.val &gt; mid.val) {
                 rightTail.next = head;
                 rightTail = head;
             } else {
@@ -315,8 +315,8 @@ public class Solution {
         return left;
     }
     
-    // 1->2->3 return 2
-    // 1->2 return 1
+    // 1-&gt;2-&gt;3 return 2
+    // 1-&gt;2 return 1
     private ListNode findMedian(ListNode head) {
         ListNode slow = head, fast = head.next;
         while (fast != null && fast.next != null) {
@@ -326,16 +326,16 @@ public class Solution {
         return slow;
     }
     
-    // < value in the left, > value in the right
+    // &lt; value in the left, &gt; value in the right
     private Pair partition(ListNode head, int value) {
         ListNode leftDummy = new ListNode(0), leftTail = leftDummy;
         ListNode rightDummy = new ListNode(0), rightTail = rightDummy;
         ListNode equalDummy = new ListNode(0), equalTail = equalDummy;
         while (head != null) {
-            if (head.val < value) {
+            if (head.val &lt; value) {
                 leftTail.next = head;
                 leftTail = head;
-            } else if (head.val > value) {
+            } else if (head.val &gt; value) {
                 rightTail.next = head;
                 rightTail = head;
             } else {
