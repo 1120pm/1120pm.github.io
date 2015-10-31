@@ -1,109 +1,187 @@
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leetcode - XXX Solution 解题方案</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-<style>
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leetcode - XXX Solution 解题方案</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="prettify.css">
+    <style>
+    * {
+        font-family: 'Montserrat', Palatino, serif;
+    }
+    
+    .prettyprint {
+        font-size: 18px;
+    }
+    
+    pre.prettyprint {
+        padding: 20px !important;
+        border: 5px solid #eee !important;
+    }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-right: 15px;
-  padding-left: 15px;
-}
 
-/* Custom page header */
-.header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-}
+    </style>
+    <style>
+    section[role=question] {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+    
+    section[role=answer] {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    
+    section[role=ad] {
+        width: 100%;
+        height: 100px;
+        background-color: #555;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    a {
+        color: #DF2322;
+    }
+    /* Space out content a bit */
+    
+    div.separator {
+        background: -webkit-linear-gradient(0, #FFFFFF 1%, #333333 50%, #FFFFFF 99%);
+        z-index: 10;
+        width: 100%;
+        /* padding-left: 4em; */
+        /* padding-right: 4em; */
+        height: 0.1em;
+        margin: 0;
+        opacity: 0.5;
+    }
+    
+    .entry-origin {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        height: 20px;
+    }
+    
+    #question-url {
+        position: absolute;
+        left: 0px;
+    }
+    
+    #answer-url {
+        position: absolute;
+        right: 0px;
+    }
+    
+    .entry-meta {
+        list-style: none;
+    }
+    
+    .entry-meta li {
+        display: inline;
+    }
+    
+    
+    footer {
+        height: 250px;
+        text-align: center;
+        background-color: #E6E3DD;
+        padding-top: 30px;
+        margin-top: 30px;
+    }
+    
+    #footer-slogan {
+        width: 40%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+    
+    #footer-logo {
+        padding: 20px;
+    }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
+        #footer_button {
+        color: white;
+        border: 1px solid #DF2322;
+        background-color: #DF2322;
+        padding: 10px 40px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+    }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-</style>
-
+    
+    #q {
+        background: linear-gradient(rgba(223, 35, 34, 0.85), rgba(223, 35, 34, 0.75)), url("Coding-DoJo.jpg");
+        background-repeat: no-repeat;
+        color: white;
+    }
+    
+    header {
+        padding: 20px 10px;
+    }
+    
+    #header_button {
+        color: #DF2322;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+    }
+    </style>
 </head>
+
 <body>
-
-  <div class="container">
-        <div class="header clearfix">
-          <nav>
-            <ul class="nav nav-pills pull-right">
-              <li role="presentation" class="active"><a href="#">Home</a></li>
-              <li role="presentation"><a href="#">About</a></li>
-              <li role="presentation"><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-          <h3 class="text-muted">Project name</h3>
+    <div class="container">
+        <header role="banner">
+            <div id="header-logo"><span id="header_button"> 
+               11:20 PM
+                </span></div>
+        </header>
+    </div>
+    <div class="jumbotron" id="q">
+        <div class="container">
+            <section role="question">
+                <h1 class="entry-title">Two Sum</h1>
+                <div class="question-content">
+                </div>
+            </section>
         </div>
+    </div>
+    <div class="container">
+        <div>
+            <div id="tags" class="btn btn-xs btn-warning">Tags</div>
+            <span class="hidebutton">
+                    
+                    <a class="btn btn-xs btn-primary" href="/tag/array/">Array</a>
+                    
+                    <a class="btn btn-xs btn-primary" href="/tag/hash-table/">Hash Table</a>
+                    
+                  </span>
+        </div>
+        <div style="height: 10px"></div>
+        <div>
+            <div id="similar" class="btn btn-xs btn-warning">Similar Problems</div>
+            <span class="hidebutton">
+                    
+                    <a class="btn btn-xs btn-primary" href="/problems/3sum/"> (M) 3Sum</a>
+                    
+                    <a class="btn btn-xs btn-primary" href="/problems/4sum/"> (M) 4Sum</a>
+                    
+                    <a class="btn btn-xs btn-primary" href="/problems/two-sum-ii-input-array-is-sorted/"> (M) Two Sum II - Input array is sorted</a>
+                    
+                    <a class="btn btn-xs btn-primary" href="/problems/two-sum-iii-data-structure-design/"> (E) Two Sum III - Data structure design</a>
 
-        <div class="">
-          <pre class="prettyprint lang-java">
+                  </span>
+        </div>
+        <section role="answer">
+            <pre class="prettyprint lang-java">
 /**
  * 本代码由九章算法编辑提供。没有版权欢迎转发。
  * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
@@ -164,37 +242,50 @@ body {
  }
 
           </pre>
+        </section>
+        <div class="entry-origin">
+            <a href="https://leetcode.com/problems/two-sum/" id="question-url" title="View the original question">
+                    Q: leetcode.com
+                </a>
+            <a href="https://leetcode.com/problems/two-sum/" id="answer-url" title="View the original question">
+                    A: jiuzhang.com
+                </a>
         </div>
-
-        <div class="row marketing">
-          <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-          </div>
-
-          <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-          </div>
+        <hr>
+        <section role="ad" id="placement1">
+            Advertisement
+        </section>
+    </div>
+    <footer>
+        <div>
+            <p id="footer-slogan">Dedicated to help developers who are seeking jobs save more time
+            </p>
+            <div id="footer-logo"><span id="footer_button"> 
+               11:20 PM
+                </span></div>
         </div>
+    </footer>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- placement1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6745092201655602"
+     data-ad-slot="8189204970"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        <footer class="footer">
-          <p>Eleven Twenty</p>
-        </footer>
+  ga('create', 'UA-69527070-1', 'auto');
+  ga('send', 'pageview');
 
-      </div>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</script>
 </body>
+
 </html>
