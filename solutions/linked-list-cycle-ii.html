@@ -1,0 +1,236 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Linked List Cycle II Solution | Linked List Cycle II 解题方案</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="prettify.css">
+    <style>
+    * {
+        font-family: 'Montserrat', Palatino, serif;
+    }
+
+    .prettyprint {
+        font-size: 18px;
+    }
+
+    pre.prettyprint {
+        padding: 20px !important;
+        border: 5px solid #eee !important;
+    }
+
+
+    </style>
+    <style>
+    section[role=question] {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    section[role=answer] {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    section[role=ad] {
+        width: 100%;
+    }
+
+    a {
+        color: #DF2322;
+    }
+    /* Space out content a bit */
+
+    div.separator {
+        background: -webkit-linear-gradient(0, #FFFFFF 1%, #333333 50%, #FFFFFF 99%);
+        z-index: 10;
+        width: 100%;
+        /* padding-left: 4em; */
+        /* padding-right: 4em; */
+        height: 0.1em;
+        margin: 0;
+        opacity: 0.5;
+    }
+
+    .entry-origin {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        height: 20px;
+    }
+
+    #question-url {
+        position: absolute;
+        left: 0px;
+    }
+
+    #answer-url {
+        position: absolute;
+        right: 0px;
+    }
+
+    .entry-meta {
+        list-style: none;
+    }
+
+    .entry-meta li {
+        display: inline;
+    }
+
+
+    footer {
+        height: 250px;
+        text-align: center;
+        background-color: #E6E3DD;
+        padding-top: 30px;
+        margin-top: 30px;
+    }
+
+    #footer-slogan {
+        width: 40%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    #footer-logo {
+        padding: 20px;
+    }
+
+        #footer_button {
+        color: white;
+        border: 1px solid #DF2322;
+        background-color: #DF2322;
+        padding: 10px 40px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+    }
+
+
+    #q {
+        background: linear-gradient(rgba(223, 35, 34, 0.85), rgba(223, 35, 34, 0.75)), url("Coding-DoJo.jpg");
+        background-repeat: no-repeat;
+        color: white;
+    }
+
+    header {
+        padding: 20px 10px;
+    }
+
+    #header_button {
+        color: #DF2322;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header role="banner">
+            <div id="header-logo"><span id="header_button">
+               11:20 PM
+                </span></div>
+        </header>
+    </div>
+    <div class="jumbotron" id="q">
+        <div class="container">
+            <section role="question">
+                <h1 class="entry-title">Linked List Cycle II</h1>
+                <div class="question-content">
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="container">
+        <section role="answer">
+            <pre class="prettyprint lang-java">
+              /**
+ * 本代码由九章算法编辑提供。没有版权欢迎转发。
+ * - 九章算法致力于帮助更多中国人找到好的工作，教师团队均来自硅谷和国内的一线大公司在职工程师。
+ * - 现有的面试培训课程包括：九章算法班，系统设计班，BAT国内班
+ * - 更多详情请见官方网站：http://www.jiuzhang.com/
+ */
+
+/**
+ * Definition for ListNode.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int val) {
+ *         this.val = val;
+ *         this.next = null;
+ *     }
+ * }
+ */ 
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        if (head == null || head.next==null) {
+            return null;
+        }
+
+        ListNode fast, slow;
+        fast = head.next;
+        slow = head;
+        while (fast != slow) {
+            if(fast==null || fast.next==null)
+                return null;
+            fast = fast.next.next;
+            slow = slow.next;
+        } 
+        
+        while (head != slow.next) {
+            head = head.next;
+            slow = slow.next;
+        }
+        return head;
+    }
+}
+          </pre>
+        </section>
+        <div class="entry-origin">
+            <a href="https://www.jiuzhang.com/solutions/linked-list-cycle-ii/" id="answer-url" title="View the original question">
+                    to: www.jiuzhang.com
+                </a>
+        </div>
+        <hr>
+        <section role="ad" id="placement1">
+          <!-- placement1 -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-6745092201655602"
+               data-ad-slot="8189204970"
+               data-ad-format="auto"></ins>
+        </section>
+    </div>
+    <footer>
+        <div>
+            <p id="footer-slogan">Dedicated to help developers who are seeking jobs save more time
+            </p>
+            <div id="footer-logo"><span id="footer_button">
+               11:20 PM
+                </span></div>
+        </div>
+    </footer>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-69527070-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+</html>
